@@ -43,6 +43,7 @@ public class UpdateTaskServlet extends HttpServlet {
 
         task.setPriority(Priority.valueOf(request.getParameter("priority")));
         task.setTitle(request.getParameter("title"));
+        taskRepository.update(task);
 
         response.sendRedirect(request.getContextPath() + "/tasks-list");
     }
